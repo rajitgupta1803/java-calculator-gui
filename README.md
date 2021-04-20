@@ -25,4 +25,5 @@ BackSpace -> To delete a character
 
 Delete Key -> To clear the input area
 
-![image](https://user-images.githubusercontent.com/71140719/115110739-816b3980-9f9a-11eb-9065-f17354ef31eb.png)
+![image](https://user-images.githubusercontent.com/71140719/115362872-97b60700-a1df-11eb-8667-02c4c3d02fe5.png)
+
