@@ -21,9 +21,8 @@ Digit and operator keys -> To enter numbers and operators (You can use the numpa
 
 BackSpace -> To delete a character
 
-![image](https://user-images.githubusercontent.com/71140719/115110726-6f899680-9f9a-11eb-8b8a-18d0d4525399.png)
+![image](https://user-images.githubusercontent.com/71140719/115363445-1b6ff380-a1e0-11eb-9628-3acde0541464.png)
 
 Delete Key -> To clear the input area
 
 ![image](https://user-images.githubusercontent.com/71140719/115362872-97b60700-a1df-11eb-8667-02c4c3d02fe5.png)
-
