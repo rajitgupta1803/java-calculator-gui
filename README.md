@@ -1,5 +1,5 @@
 # java-calculator-gui
-![image](https://user-images.githubusercontent.com/71140719/115109925-42d38000-9f96-11eb-9731-2eec7f4dbd8d.png)
+![image](https://user-images.githubusercontent.com/71140719/115362579-4f96e480-a1df-11eb-83ba-51b89e407d13.png)
 A calculator with modern GUI made in java
 
 GUI library used -> JavaFX
