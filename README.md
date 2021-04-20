@@ -2,7 +2,8 @@
 ![image](https://user-images.githubusercontent.com/71140719/115362579-4f96e480-a1df-11eb-83ba-51b89e407d13.png)
 A calculator with modern GUI made in java
 
-GUI library used -> JavaFX
+GUI library used -> JavaFX 16
+Java version used -> JDK 16
 
 # Features
 
@@ -15,7 +16,7 @@ The input area can be expanded infinitely based on how many numbers you enter
 ![image](https://user-images.githubusercontent.com/71140719/115364336-eadc8980-a1e0-11eb-9384-e553e0ddc9ac.png)
 
 ### Keybinds
-Digit and operator keys -> To enter numbers and operators (You can use the numpad also)
+Number and operator keys -> To enter numbers and operators (You can use the numpad also)
 
 ![image](https://user-images.githubusercontent.com/71140719/115364357-f039d400-a1e0-11eb-8064-033fff435b30.png)
 
