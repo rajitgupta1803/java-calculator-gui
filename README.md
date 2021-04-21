@@ -3,6 +3,7 @@
 A calculator with modern GUI made in java
 
 GUI library used -> JavaFX 16
+
 Java version used -> JDK 16
 
 # Features
