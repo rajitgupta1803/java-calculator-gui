@@ -10,6 +10,8 @@ import java.util.HashMap;
 public class Controller {
     private StringBuilder exp = new StringBuilder();
     private final String[] operators = {"÷", "+", "*", "-", "="};
+    private final int wrappingWidth = 600;
+    private final double textSpace = 31.5789473;
 
     @FXML
     public Text calc_text;
@@ -36,11 +38,17 @@ public class Controller {
         if (inp.equals("AC")) {
             calc_text.setText("");
             exp.replace(0, exp.length(), "");
+            calc_text.setWrappingWidth(wrappingWidth);
             return;
         } else if (inp.equals("Del")) {
             if (exp.length() >= 1) {
                 exp.deleteCharAt(exp.length() - 1);
                 calc_text.setText(exp.toString());
+                if(calc_text.getWrappingWidth() > wrappingWidth){
+                    if ((int) (exp.length() * textSpace) <= wrappingWidth) {
+                        calc_text.setWrappingWidth(wrappingWidth);
+                    }
+                }
             }
             return;
         }
@@ -50,7 +58,7 @@ public class Controller {
         if (Arrays.asList(operators).contains(inp) && exp.length() >= 1 && Arrays.asList(operators).contains(Character.toString(exp.charAt(exp.length() - 1))))
             return;
 
-        if (exp.length() == (int) (calc_text.getWrappingWidth() / 31.5789473)) {
+        if (exp.length() >= (int) (calc_text.getWrappingWidth() / textSpace)) {
             calc_text.setWrappingWidth(calc_text.getWrappingWidth() + 100);
         }
 
@@ -132,8 +140,9 @@ public class Controller {
 
     public String addNum(String inp) {
         String[] numArr = inp.split("\\+");
-        double NumPart = Math.round((Double.parseDouble(numArr[0]) + Double.parseDouble(numArr[1])) * 100);
-        double sum = NumPart / 100;
+        double result = Double.parseDouble(numArr[0]) + Double.parseDouble(numArr[1]);
+        String formattedResult = String.format("%.3f", result);
+        double sum = Double.parseDouble(formattedResult);
         return checkDecimal(sum);
     }
 
@@ -147,30 +156,31 @@ public class Controller {
             }
         }
         String[] numArr = inp.toString().split(" ");
-        double NumPart = Math.round((Double.parseDouble(numArr[0]) - Double.parseDouble(numArr[1])) * 100);
-        double sum = NumPart / 100;
+        double result = Double.parseDouble(numArr[0]) - Double.parseDouble(numArr[1]);
+        String formattedResult = String.format("%.3f", result);
+        double sum = Double.parseDouble(formattedResult);
         return checkDecimal(sum);
     }
 
     public String MultNum(String inp) {
         String[] numArr = inp.split("\\*");
-        double NumPart = Math.round((Double.parseDouble(numArr[0]) * Double.parseDouble(numArr[1])) * 100);
-        double sum = NumPart / 100;
+        double result = Double.parseDouble(numArr[0]) * Double.parseDouble(numArr[1]);
+        String formattedResult = String.format("%.3f", result);
+        double sum = Double.parseDouble(formattedResult);
         return checkDecimal(sum);
     }
 
     public String DivNum(String inp) {
         String[] numArr = inp.split("÷");
-        double NumPart = Math.round((Double.parseDouble(numArr[0]) / Double.parseDouble(numArr[1])) * 100);
-        double sum = NumPart / 100;
+        double result = Double.parseDouble(numArr[0]) / Double.parseDouble(numArr[1]);
+        String formattedResult = String.format("%.3f", result);
+        double sum = Double.parseDouble(formattedResult);
         return checkDecimal(sum);
     }
 
     public String checkDecimal(double inp1) {
-        StringBuilder intResult = new StringBuilder();
         if (inp1 % 1 == 0) {
-            intResult.append(Math.round(inp1));
-            return intResult.toString();
+            return String.format("%.0f", inp1);
         } else {
             return Double.toString(inp1);
         }
