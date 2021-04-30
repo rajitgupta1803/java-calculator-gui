@@ -2,6 +2,7 @@ package Calculator;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.text.Text;
 
 import java.util.Arrays;
@@ -15,6 +16,8 @@ public class Controller {
 
     @FXML
     public Text calc_text;
+    @FXML
+    public ScrollPane scrollPane;
 
     public void handleKey(String key) {
         if (key.contains("DIGIT") || key.contains("NUMPAD")) {
@@ -60,6 +63,7 @@ public class Controller {
 
         if (exp.length() >= (int) (calc_text.getWrappingWidth() / textSpace)) {
             calc_text.setWrappingWidth(calc_text.getWrappingWidth() + 100);
+            scrollPane.setHvalue(1);
         }
 
         if (inp.equals(".")) {
